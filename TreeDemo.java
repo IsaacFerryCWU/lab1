@@ -125,17 +125,32 @@ class Node{
 			}
 			return false;
 		}
-	   
-	   
-	   
-	   /*
-	   a method to find the node in the tree
-	   with a smallest key
-	   */
-	   public int getMin(Node root){
-         //implement in here
-	      return 0;
-	   }
+
+
+
+		/**
+		 * @param root
+		 * @return min value in tree
+		 * A method to find and return the
+		 * smallest value in the tree.
+		 */
+		public int getMin(Node root){
+			if (root == null){
+				return Integer.MAX_VALUE;
+			}
+
+			int res = root.value;
+			int lres = getMin(root.left);
+			int rres = getMin(root.right);
+
+			if(lres < res){
+				res = lres;
+			}
+			if(rres < res){
+				res = rres;
+			}
+			return res;
+		}
 	  
 	  
 	  
