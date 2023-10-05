@@ -152,15 +152,31 @@ class Node{
 			return res;
 		}
 	  
-	  
-	  
-	   /*
-	   a method to find the node in the tree
-	   with a largest key
-	   */
+		
+
+		/**
+		 *
+		 * @param root
+		 * @return the max value in a tree
+		 * A method to fine the smallest value
+		 * in a tree
+		 */
 	   public int getMax(Node root){
-         //implement in here
-		   return 0;
+		   if (root == null){
+			   return Integer.MIN_VALUE;
+		   }
+
+		   int res = root.value;
+		   int lres = getMax(root.left);
+		   int rres = getMax(root.right);
+
+		   if(lres > res){
+			   res = lres;
+		   }
+		   if(rres > res){
+			   res = rres;
+		   }
+		   return res;
 	   }
 	   
 	   
