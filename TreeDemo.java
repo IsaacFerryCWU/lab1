@@ -101,18 +101,30 @@ class Node{
 			postOrderTraversal(root.right);
 			System.out.println(root.value);
 		}
-	   
-	   
-	   
-	   /*
-	   a method to find the node in the tree
-	   with a specific value
-	   */
-	   public boolean find(Node root, int key){
-		 //implement in here
-		   return true;
-		  
-	   }
+
+
+
+		/**
+		 *
+		 * @param root
+		 * @param key
+		 * @return true or false
+		 * A method to find the node a tree
+		 * with a specific value.
+		 */
+		public boolean find(Node root, int key){
+			while( root != null){
+				if(root.value == key){
+					return true;
+				}
+				if(key < root.value){
+					root = root.left;
+				}else{
+					root = root.right;
+				}
+			}
+			return false;
+		}
 	   
 	   
 	   
@@ -189,6 +201,8 @@ class Node{
 	      System.out.print("in-order :   ");
 	      t1.inOrderTraversal(t1.root);
 	      System.out.println();
+
+
 	           
 	      
 	   }  
