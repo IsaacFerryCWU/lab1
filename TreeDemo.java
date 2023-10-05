@@ -85,17 +85,22 @@ class Node{
 			System.out.println(root.value + " ");
 			inOrderTraversal(root.right);
 		}
-	   
-	   
-	   
-	   /*
-	   post-order traversal
-	   */
-	  
-	   public void postOrderTraversal(Node root){
-         //implement in here
-		   
-	   }
+
+
+
+		/**
+		 * @param root
+		 * post-order traversal
+		 * Prints the value of every node in post-Order
+		 */
+		public void postOrderTraversal(Node root){
+			if (root == null){
+				return;
+			}
+			postOrderTraversal(root.left);
+			postOrderTraversal(root.right);
+			System.out.println(root.value);
+		}
 	   
 	   
 	   
