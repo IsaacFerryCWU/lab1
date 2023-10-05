@@ -69,14 +69,22 @@ class Node{
 
 		}
 
-	   
-	   
-	   /*
-	   in-order traversal
-	   */
-	   public void inOrderTraversal(Node root){
-	      //implement in here
-	   }
+
+
+		/**
+		 *
+		 * @param root
+		 * in-order traversal
+		 * Prints the value of every node in order
+		 */
+		public void inOrderTraversal(Node root){
+			if(root == null){
+				return;
+			}
+			inOrderTraversal(root.left);
+			System.out.println(root.value + " ");
+			inOrderTraversal(root.right);
+		}
 	   
 	   
 	   
