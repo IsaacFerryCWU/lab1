@@ -52,15 +52,22 @@ class Node{
 	      
 	      }//closing main if-else 
 	   }
-	   
-	   /*
-	   pre-order traversal
-	   Prints the value of every node preorder
-	   */
-	   public void preOrderTraversal(Node root){
-		//implement in here
-		   
-	   }
+
+		/**
+		 *
+		 * @param root
+		 * pre-order traversal
+		 * Prints the value of every node in preorder
+		 */
+		public void preOrderTraversal(Node root){
+			if (root == null){
+				return;
+			}
+			System.out.println(root.value + " ");
+			preOrderTraversal(root.left);
+			preOrderTraversal(root.right);
+
+		}
 
 	   
 	   
